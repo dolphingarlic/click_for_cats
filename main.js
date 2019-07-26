@@ -1,6 +1,6 @@
 let canvas = document.getElementById("canvas"), ctx = canvas.getContext('2d');
 
-let cats, meow = new Audio('meow.mp3');
+let cats;
 
 // Fills the screen with hot pink and makes the canvas fullscreen
 function init() {
@@ -19,7 +19,7 @@ let w = 100, h = 100
 function draw(event) {
     let img = cats[Math.floor(Math.random() * cats.length)];
     ctx.drawImage(img, event.clientX - w / 2, event.clientY - h / 2, w, h);
-    meow.play();
+    new Audio('meow.mp3').play();
 }
 
 window.addEventListener("click", draw, false);
